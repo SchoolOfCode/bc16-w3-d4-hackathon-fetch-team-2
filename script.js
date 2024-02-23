@@ -1,5 +1,6 @@
 //Endpoint for the API which gets hourly temp & precipitation for London
-const url = "https://api.open-meteo.com/v1/forecast?latitude=51.5085&longitude=-0.1257&hourly=temperature_2m,precipitation_probability,precipitation"
+//Add daily data to fetch request
+const url = "https://api.open-meteo.com/v1/forecast?latitude=51.5085&longitude=-0.1257&hourly=temperature_2m,precipitation_probability,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max"
 
 // Define fetch function
 async function fetchData() {
@@ -48,9 +49,34 @@ async function displayWeather ()
 
  }
 
- displayWeather();
 
-document.addEventListener("DOMContentLoaded", fetchData);
+ // define function to extract and display daily data
+
+ async function dailyWeather ()
+{
+  const weatherData = await fetchData()
+
+  // use current time to access current temp from API data
+  let maxTemperature = weatherData.daily.temperature_2m_max[0]
+  let minTemperature = weatherData.daily.temperature_2m_min[0]
+  let maxPrecipitationProbability = weatherData.daily.precipitation_probability_max[0]
+
+  
+  // add text reporting current temp to DOM
+  const dailyWeather = document.getElementById("dailyWeather");
+  const dailyWeatherContainer = document.createElement("div")
+  dailyWeatherContainer.innerHTML = `
+  <p>The maximum temperature today is ${maxTemperature} °C</p>
+  <p>The minimum temperature today is ${minTemperature} °C</p>
+  <p>The maximum chance of precipitation today is ${maxPrecipitationProbability} %</p>
+  `
+  
+  dailyWeather.appendChild(dailyWeatherContainer)
+ }
+
+ document.addEventListener("DOMContentLoaded", displayWeather);
+
+ document.querySelector("button").addEventListener("click", dailyWeather)
 
 // accept user's geo-location and convert that into co-ords
 // alert("weather-innit would like to know your location") or prompt to text match name of location and get an api to match longitude and altitude of the cit adn get weatehr
