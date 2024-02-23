@@ -1,13 +1,13 @@
 <mxfile host="65bd71144e">
     <diagram id="gCN2j33IIJAMvIv-Pt9y" name="Page-1">
-        <mxGraphModel dx="1032" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1032" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="7" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="6">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="Play with the API" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="2" value="Play with the API ✅" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="305" y="60" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="4">
@@ -20,7 +20,7 @@
                     <mxGeometry x="305" y="260" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="Temp and precipitaiotn&lt;br&gt;(if we have more time more params)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="460" y="260" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="520" y="260" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" style="edgeStyle=none;html=1;" edge="1" parent="1" source="6" target="3">
                     <mxGeometry relative="1" as="geometry"/>
@@ -49,11 +49,37 @@
                 <mxCell id="18" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="15" target="17">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;" edge="1" parent="1" source="15" target="19">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="15" value="include code in the funtion that converts the data from the json that makes it into an object." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="307.5" y="570" width="132.5" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="Accepts live user geo-location" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="600" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="19" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Inject weather data into the DOM" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="313.75" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Add interactivity e.g. button to &quot;change location&quot;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="440" y="290" as="sourcePoint"/>
+                        <mxPoint x="520" y="290" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="440" y="290" as="sourcePoint"/>
+                        <mxPoint x="520" y="290" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
