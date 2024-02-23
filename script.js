@@ -20,20 +20,58 @@ async function fetchData() {
   //Log object to console
   console.log(data);
 
+// returns the data to be used elsewhere 
+return data
 }
 
+// a sepereate async function to convert the weather data object into readable text on the webpage
+async function displayWeather ()
+{
+  const weatherData = await fetchData()
+  for (let i=0; i<weatherData.hourly.temperature_2m[24]; i++){ //  ${currenttime} === 0 - 23 mathFloor
+    const temperature = weatherData.hourly.temperature_2m[i];
+
+    const weather = document.getElementById("weather");
+    weather.textContent = `${temperature}`;
+    weather.style = "color: white";
+
+ }
+
+    // precipitation
+    
+   // hourly weatehr history
+   // future hourly weather
 
 
+    /*const name = document.createElement("p");
+    name.textContent = `Name: ${person.name}`
+
+    const age  = document.createElement("p");
+    age.textContent = `Age: ${person.age}`;
+
+    const image = document.createElement("img");
+    image.src = person.picture;
+    profile.appendChild(name);
+    profile.appendChild(age);
+    profile.appendChild(image);
+
+    people.appendChild(profile);
+  */
+
+    
+
+
+} 
+
+document.addEventListener("DOMContentLoaded", fetchData);
 
 /*
-const jokeElement = document.getElementById("joke");
-jokeElement.textContent = data.joke;
-
-const jokeHistory = document.getElementById("joke-history");
-
-const originalLog = console.log;
 console.log = function() {
   originalLog.apply(console, arguments);
   jokeHistory.innerHTML += `${data.joke}<br>`;
 };
+
+const jokeHistory = document.getElementById("joke-history");
+
+const originalLog = console.log;
 */
