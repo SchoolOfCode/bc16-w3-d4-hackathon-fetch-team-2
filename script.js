@@ -33,14 +33,22 @@ async function displayWeather ()
   let currentTime = Date().split(" ")[4].split(":")[0]
 
   // use current time to access current temp from API data
-  let currentTemperature = weatherData.hourly.temperature_2m[currentTime]
+  let currentTemperature = weatherData.hourly.temperature_2m[currentTime];
+  let precipitationProbability = weatherData.hourly.precipitation_probability[currentTime];
+  let precipitation = weatherData.hourly.precipitation[currentTime];
   
   // add text reporting current temp to DOM
   const weather = document.getElementById("weather");
-  weather.textContent = `The temperature is currently ${currentTemperature} °C`;
+  weather.innerHTML = `
+  <p>The temperature is currently ${currentTemperature} °C</p>
+  <p>The chance of precipitation is currently ${precipitationProbability} %</p>
+  <p>There is currently ${precipitation} mm of precipitation </p>
+  `;
   weather.style = "color: white";
 
  }
+
+ displayWeather();
 
 
     // precipitation
@@ -63,11 +71,6 @@ async function displayWeather ()
 
     people.appendChild(profile);
   */
-
-    
-
-
-
 
 document.addEventListener("DOMContentLoaded", fetchData);
 
