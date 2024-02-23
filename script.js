@@ -28,14 +28,17 @@ return data
 async function displayWeather ()
 {
   const weatherData = await fetchData()
-  for (let i=0; i<weatherData.hourly.temperature_2m[24]; i++){ //  ${currenttime} === 0 - 23 mathFloor
-    const temperature = weatherData.hourly.temperature_2m[i];
 
-    const weather = document.getElementById("weather");
-    weather.textContent = `${temperature}`;
-    weather.style = "color: white";
+  let currentTime = Date().split(" ")[4].split(":")[0]
+
+  let currentTemperature = weatherData.hourly.temperature_2m[currentTime]
+  
+  const weather = document.getElementById("weather");
+  weather.textContent = `The temperature is currently ${currentTemperature} °C`;
+  weather.style = "color: white";
 
  }
+
 
     // precipitation
     
@@ -61,7 +64,7 @@ async function displayWeather ()
     
 
 
-} 
+
 
 document.addEventListener("DOMContentLoaded", fetchData);
 
