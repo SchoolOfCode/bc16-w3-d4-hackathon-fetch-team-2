@@ -56,13 +56,12 @@ async function displayWeather ()
 {
   const weatherData = await fetchData()
 
-  // use current time to access current temp from API data
+  // picks up daily data from API response and caches as variables
   let maxTemperature = weatherData.daily.temperature_2m_max[0]
   let minTemperature = weatherData.daily.temperature_2m_min[0]
   let maxPrecipitationProbability = weatherData.daily.precipitation_probability_max[0]
 
-  
-  // add text reporting current temp to DOM
+  //Appends the daily weather data to the DOM
   const dailyWeather = document.getElementById("dailyWeather");
   const dailyWeatherContainer = document.createElement("div")
   dailyWeatherContainer.innerHTML = `
@@ -74,8 +73,10 @@ async function displayWeather ()
   dailyWeather.appendChild(dailyWeatherContainer)
  }
 
+ //fetches data on page load
  document.addEventListener("DOMContentLoaded", displayWeather);
 
+ //adds daily data to DOM when button clicked
  document.querySelector("button").addEventListener("click", dailyWeather)
 
 // accept user's geo-location and convert that into co-ords
