@@ -29,10 +29,13 @@ async function displayWeather ()
 {
   const weatherData = await fetchData()
 
+  // get current hour from Date object and cache as variable
   let currentTime = Date().split(" ")[4].split(":")[0]
 
+  // use current time to access current temp from API data
   let currentTemperature = weatherData.hourly.temperature_2m[currentTime]
   
+  // add text reporting current temp to DOM
   const weather = document.getElementById("weather");
   weather.textContent = `The temperature is currently ${currentTemperature} °C`;
   weather.style = "color: white";
