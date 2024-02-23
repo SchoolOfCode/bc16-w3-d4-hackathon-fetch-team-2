@@ -50,37 +50,9 @@ async function displayWeather ()
 
  displayWeather();
 
-
-    // precipitation
-    
-   // hourly weatehr history
-   // future hourly weather
-
-
-    /*const name = document.createElement("p");
-    name.textContent = `Name: ${person.name}`
-
-    const age  = document.createElement("p");
-    age.textContent = `Age: ${person.age}`;
-
-    const image = document.createElement("img");
-    image.src = person.picture;
-    profile.appendChild(name);
-    profile.appendChild(age);
-    profile.appendChild(image);
-
-    people.appendChild(profile);
-  */
-
 document.addEventListener("DOMContentLoaded", fetchData);
 
-/*
-console.log = function() {
-  originalLog.apply(console, arguments);
-  jokeHistory.innerHTML += `${data.joke}<br>`;
-};
-
-const jokeHistory = document.getElementById("joke-history");
-
-const originalLog = console.log;
-*/
+// accept user's geo-location and convert that into co-ords
+// alert("weather-innit would like to know your location") or prompt to text match name of location and get an api to match longitude and altitude of the cit adn get weatehr
+// Dynamically change H1 to be the name of the geo-location: 
+// const geoLocationName = document.querySelector("h1") >>>>> geoLocationName.textContent(`${geoLocation}`)
